@@ -3,6 +3,7 @@ Quickly spin up Docker instances to run Kolide Fleet
 
 ## Start instances
 cd quick-fleet
+
 docker-compose up
 
 ## Start instances detached
