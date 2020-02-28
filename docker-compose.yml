@@ -1,0 +1,32 @@
+version: "3.5"
+services:
+  mysql: # Database
+    container_name: mysql
+    image: mysql:latest
+    command: mysqld --datadir=/tmp/mysqldata
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: fleet
+      MYSQL_USER: fleet
+      MYSQL_PASSWORD: toor
+    volumes:
+      - mysqldata:/tmp:rw
+
+  redis: # Database
+    container_name: redis
+    image: redis:latest
+
+  fleet: # Fleet webserver/binary
+    container_name: fleet
+    image: kolide/fleet:latest
+    command: sh -c "echo '\n' | /usr/bin/fleet prepare db --config=/tmp/kolide.yml && /usr/bin/fleet serve --config=/tmp/kolide.yml"
+    depends_on:
+      - mysql
+      - redis
+    volumes:
+      - .:/tmp
+    ports:
+      - "8443:443"
+
+volumes:
+  mysqldata:

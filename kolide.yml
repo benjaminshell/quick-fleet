@@ -1,0 +1,15 @@
+mysql:
+  address: mysql:3306
+  database: fleet
+  username: fleet
+  password: toor
+redis:
+  address: redis:6379
+server:
+  address: 0.0.0.0:443
+  cert: /tmp/server.crt
+  key: /tmp/server.key
+auth:
+  jwt_key: toor
+logging:
+  json: false
