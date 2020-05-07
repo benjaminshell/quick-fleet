@@ -24,7 +24,7 @@ services:
       - mysql
       - redis
     volumes:
-      - .:/tmp
+      - ./quick-fleet/:/tmp
     ports:
       - "8443:443"
 

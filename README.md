@@ -1,6 +1,9 @@
 # quick-fleet
 Quickly spin up Docker instances to run Kolide Fleet
 
+Note: It was intentional to put a symlink in the directory pointing to the parent. This is to provide easy compatibility with another project until another method is determined.
+
+
 ## Start instances
 cd quick-fleet
 
