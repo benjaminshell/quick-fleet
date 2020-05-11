@@ -7,7 +7,7 @@ redis:
   address: redis:6379
 server:
   address: 0.0.0.0:443
-  cert: /tmp/server.crt
+  cert: /tmp/server.cert
   key: /tmp/server.key
 auth:
   jwt_key: toor

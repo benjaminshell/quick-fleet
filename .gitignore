@@ -1,4 +1,1 @@
-*.csr
-*.crt
-*.key
 osquery_*
