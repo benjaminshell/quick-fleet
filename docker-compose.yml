@@ -11,10 +11,12 @@ services:
       MYSQL_PASSWORD: toor
     volumes:
       - mysqldata:/tmp:rw
+    restart: unless-stopped
 
   redis: # Database
     container_name: redis
     image: redis:latest
+    restart: unless-stopped
 
   fleet: # Fleet webserver/binary
     container_name: fleet
@@ -27,6 +29,7 @@ services:
       - ./quick-fleet/:/tmp
     ports:
       - "8443:443"
+    restart: unless-stopped
 
 volumes:
   mysqldata:
