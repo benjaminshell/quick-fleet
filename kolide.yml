@@ -12,4 +12,8 @@ server:
 auth:
   jwt_key: toor
 logging:
-  json: false
+  json: true
+  verbose: true
+filesystem:
+  status_log_file: /tmp/status.log
+  result_log_file: /tmp/result.log
