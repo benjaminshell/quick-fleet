@@ -20,8 +20,8 @@ services:
 
   fleet: # Fleet webserver/binary
     container_name: fleet
-    image: kolide/fleet:latest
-    command: sh -c "echo '\n' | /usr/bin/fleet prepare db --config=/tmp/kolide.yml && /usr/bin/fleet serve --config=/tmp/kolide.yml"
+    image: fleetdm/fleet:latest
+    command: sh -c "echo '\n' | /usr/bin/fleet prepare db --config=/tmp/fleet.yml && /usr/bin/fleet serve --config=/tmp/fleet.yml"
     depends_on:
       - mysql
       - redis
